@@ -23,6 +23,8 @@ module Rpush
         attribute :hms_key_id, :string
         attribute :hms_sub_acc_id, :string
         attribute :hms_key, :string
+        attribute :firebase_project_id, :string
+        attribute :json_key, :string
 
         index :name
 

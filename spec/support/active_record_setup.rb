@@ -44,6 +44,7 @@ require 'generators/templates/rpush_4_1_0_updates'
 require 'generators/templates/rpush_4_1_1_updates'
 require 'generators/templates/rpush_4_2_0_updates'
 require 'generators/templates/rpush_7_0_2_add_hms'
+require 'generators/templates/rpush_7_1_0_updates'
 
 migrations = [
   AddRpush,
@@ -63,6 +64,7 @@ migrations = [
   Rpush411Updates,
   Rpush420Updates,
   Rpush702AddHms
+  Rpush710Updates
 ]
 
 unless ENV['CI']
