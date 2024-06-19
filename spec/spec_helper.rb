@@ -16,14 +16,6 @@ end
 require 'timecop'
 require 'activerecord-jdbc-adapter' if defined? JRUBY_VERSION
 
-require 'rpush'
-require 'rpush/daemon'
-require 'rpush/client/redis'
-require 'rpush/client/active_record'
-require 'rpush/daemon/store/active_record'
-require 'rpush/daemon/store/redis'
-require 'fixtures'
-
 def active_record?
   client == :active_record
 end
@@ -33,6 +25,14 @@ def redis?
 end
 
 require 'support/active_record_setup' if active_record?
+
+require 'rpush'
+require 'rpush/daemon'
+require 'rpush/client/redis'
+require 'rpush/client/active_record'
+require 'rpush/daemon/store/active_record'
+require 'rpush/daemon/store/redis'
+require 'fixtures'
 
 RPUSH_ROOT = '/tmp/rails_root'
 

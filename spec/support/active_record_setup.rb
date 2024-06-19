@@ -27,6 +27,13 @@ puts "Using #{SPEC_ADAPTER} adapter."
 ActiveRecord::Base.configurations = { "test" => db_config[SPEC_ADAPTER] }
 ActiveRecord::Base.establish_connection(db_config[SPEC_ADAPTER])
 
+require 'rpush'
+require 'rpush/daemon'
+require 'rpush/client/redis'
+require 'rpush/client/active_record'
+require 'rpush/daemon/store/active_record'
+require 'rpush/daemon/store/redis'
+
 require 'generators/templates/add_rpush'
 require 'generators/templates/rpush_2_0_0_updates'
 require 'generators/templates/rpush_2_1_0_updates'
@@ -63,7 +70,7 @@ migrations = [
   Rpush410Updates,
   Rpush411Updates,
   Rpush420Updates,
-  Rpush702AddHms
+  Rpush702AddHms,
   Rpush710Updates
 ]
 

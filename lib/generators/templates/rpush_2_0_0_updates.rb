@@ -57,7 +57,7 @@ class Rpush200Updates < ActiveRecord::Migration[5.0]
   end
 
   def self.adapter_name
-    env = (defined?(Rails) && Rails.env) ? Rails.env : 'development'
+    env = (defined?(Rails) && Rails.env) ? Rails.env : (ENV['RAILS_ENV'] || 'development')
     if ActiveRecord::VERSION::MAJOR > 6
       ActiveRecord::Base.configurations.configs_for(env_name: env).first.configuration_hash[:adapter]
     else
