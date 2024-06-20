@@ -1,5 +1,5 @@
 require 'unit_spec_helper'
-require 'unit/notification_shared.rb'
+require 'unit/client/shared/notification.rb'
 
 describe Rpush::Client::Redis::Hms::Notification do
   let(:app) { Fixtures.create!(:hms_app) }

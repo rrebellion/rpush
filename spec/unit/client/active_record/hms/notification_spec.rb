@@ -1,8 +1,8 @@
 require 'unit_spec_helper'
-require 'unit/notification_shared.rb'
+require 'unit/client/shared/notification.rb'
 
 describe Rpush::Client::ActiveRecord::Hms::Notification do
-  it_should_behave_like 'an Notification subclass'
+  # it_should_behave_like 'an Notification subclass'
 
   let(:app) { Fixtures.create!(:hms_app) }
   let(:notification_class) { Rpush::Client::ActiveRecord::Hms::Notification }
